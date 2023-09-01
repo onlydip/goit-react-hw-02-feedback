@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-
+import  Section  from "./Section/Section";
+import  Statistic  from "./Statistic/Statistics";
+import  Feedback  from "./Feedback/Feedback";
+import  Notification  from "./Notification/Notification";
 
 export class App extends Component {
   state = {
@@ -10,21 +13,50 @@ export class App extends Component {
 
 
 
+
+  handleFeedback = (type) => {
+    this.setState((prevState) => ({
+      [type]: prevState[type] + 1,
+    }
+    ));
+  };
+
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+    countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback();
+    const { good } = this.state;
+    return total > 0 ? Math.round((good / total) * 100) : 0;
+  };
+
   render() {
     const { good, neutral, bad } = this.state;
+    const total = this.countTotalFeedback();
+    const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
       <div>
-        <h1>Відгуки</h1>
-        <button>Класс</button>
-        <button>Нейтрально</button>
-        <button>Погано</button>
-        <h2>Статистика</h2>
-        <button>Класс:{good}</button>
-        <button>Нейтрально:{neutral}</button>
-        <button>Погано:{bad}</button>
+        <Section title="Відгуки">
+          <Feedback onLeaveFeedback={this.handleFeedback} />
+        </Section>
 
+         <Section title="Статистика">
+          {total > 0 ? (
+            <Statistic
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="Немає жодного відгуку" />
+          )}
+        </Section>
       </div>
-    )
+    );
   }
 }
