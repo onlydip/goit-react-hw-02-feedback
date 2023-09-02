@@ -1,5 +1,7 @@
 import React from "react";
-import * as Yup from 'yup';
+import PropTypes from 'prop-types';
+
+
 import {
   StatisticsStyle,
   StatisticsButtonYellow,
@@ -9,13 +11,6 @@ import {
 } from "./Statistics.styled";
 
 
-const statisticsSchema = Yup.object().shape({
-  good: Yup.number().required(),
-  neutral: Yup.number().required(),
-  bad: Yup.number().required(),
-  total: Yup.number().required(),
-  positivePercentage: Yup.number().required(),
-});
 
 
 export default function Statistic({ good, neutral, bad, total, positivePercentage })
@@ -35,4 +30,11 @@ export default function Statistic({ good, neutral, bad, total, positivePercentag
     );
 };
 
-Statistic.propTypes = statisticsSchema;
+
+Statistic.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};

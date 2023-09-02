@@ -6,6 +6,7 @@ export const FeedBack = styled.div`
   padding: 15px;
    justify-content: center;
     gap: 10px;
+     margin-top: 50px;
   `;
 
   export const FeedBackButton = styled.button`

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 
-export const StatisticsStyle = styled.p`
+export const StatisticsStyle = styled.div`
  font-size: 20px; 
   font-weight: 700; 
   color: black; 

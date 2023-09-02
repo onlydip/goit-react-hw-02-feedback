@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 
-export const SectionStyle = styled.p`
+export const SectionStyle = styled.div`
  font-size: 40px; 
   font-weight: 700; 
   color: black; 
@@ -11,6 +11,6 @@ export const SectionStyle = styled.p`
   `;
 
     export const SectionContainer = styled.div`
-  margin-top: 25px;
+  margin-top: 50px;
  
 `;
