@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { FeedBack } from "./Feedback.styled";
-import { FeedBackButton } from "./Feedback.styled";
+import {
+  FeedBack, FeedBackButton
+} from  "./Feedback.styled"
+
+
 export default function Feedback({ onLeaveFeedback }) {
   return (
     <FeedBack>

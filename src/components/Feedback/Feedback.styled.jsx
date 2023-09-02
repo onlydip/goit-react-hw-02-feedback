@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const FeedBack = styled.div`
  display: flex;
   align-items: center;
-  padding: 50px;
+  padding: 15px;
    justify-content: center;
     gap: 10px;
   `;

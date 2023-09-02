@@ -7,6 +7,10 @@ export const SectionStyle = styled.p`
   color: black; 
   line-height: 1.8; 
   text-align: center;
-  margin-bottom: 20px; 
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
   `;
+
+    export const SectionContainer = styled.div`
+  margin-top: 25px;
+ 
+`;

@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import  Section  from "./Section/Section";
-import  Statistic  from "./Statistic/Statistics";
-import  Feedback  from "./Feedback/Feedback";
-import  Notification  from "./Notification/Notification";
+import  Section  from "components/Section";
+import  Statistic  from "components/Statistic";
+import  Feedback  from "components/Feedback";
+import  Notification  from "components/Notification";
 import { AppSection } from './App.styled';
 
-export class App extends Component {
+export default class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0
   };
-
-
-
 
   handleFeedback = (type) => {
     this.setState((prevState) => ({

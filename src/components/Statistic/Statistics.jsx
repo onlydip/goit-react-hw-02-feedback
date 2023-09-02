@@ -1,6 +1,12 @@
 import React from "react";
 import * as Yup from 'yup';
-import { StatisticsStyle } from "./Statistics.styled";
+import {
+  StatisticsStyle,
+  StatisticsButtonYellow,
+  StatisticsButtonGreen,
+  StatisticsButtonRed,
+  StatisticsContainer
+} from "./Statistics.styled";
 
 
 const statisticsSchema = Yup.object().shape({
@@ -18,14 +24,14 @@ export default function Statistic({ good, neutral, bad, total, positivePercentag
     return (
 
 
-          <div>
+          <StatisticsContainer>
     
-    <StatisticsStyle>😀 Good: {good}</StatisticsStyle>
-    <StatisticsStyle>😐 Neutral: {neutral}</StatisticsStyle>
-    <StatisticsStyle>😡 Bad: {bad}</StatisticsStyle>
+    <StatisticsStyle>😀 Good: <StatisticsButtonGreen>{good}</StatisticsButtonGreen></StatisticsStyle>
+    <StatisticsStyle>😐 Neutral: <StatisticsButtonYellow>{neutral}</StatisticsButtonYellow></StatisticsStyle>
+    <StatisticsStyle>😡 Bad: <StatisticsButtonRed>{bad}</StatisticsButtonRed></StatisticsStyle>
     <StatisticsStyle>Total number of reviews: {total}</StatisticsStyle>
     <StatisticsStyle>Percentage of positive feedback: {positivePercentage}%</StatisticsStyle>
-  </div>
+  </StatisticsContainer>
     );
 };
 

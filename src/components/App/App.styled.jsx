@@ -4,5 +4,5 @@ export const AppSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 20px;
 `;
