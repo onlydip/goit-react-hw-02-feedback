@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
-
-
+import { FeedBack } from "./Feedback.styled";
+import { FeedBackButton } from "./Feedback.styled";
 export default function Feedback({ onLeaveFeedback }) {
   return (
-    <div>
+    <FeedBack>
      
-      <button onClick={() => onLeaveFeedback('good')}>Good</button>
-      <button onClick={() => onLeaveFeedback('neutral')}>Neutral</button>
-      <button onClick={() => onLeaveFeedback('bad')}>Bad</button>
-    </div>
+      <FeedBackButton onClick={() => onLeaveFeedback('good')}>Good😀</FeedBackButton>
+      <FeedBackButton onClick={() => onLeaveFeedback('neutral')}>Neutral😐</FeedBackButton>
+      <FeedBackButton onClick={() => onLeaveFeedback('bad')}>Bad😡</FeedBackButton>
+    </FeedBack>
   );
 }
 Feedback.propTypes = {

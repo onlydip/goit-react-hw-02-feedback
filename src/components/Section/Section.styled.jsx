@@ -1,0 +1,12 @@
+import styled from '@emotion/styled';
+
+
+export const SectionStyle = styled.p`
+ font-size: 40px; 
+  font-weight: 700; 
+  color: black; 
+  line-height: 1.8; 
+  text-align: center;
+  margin-bottom: 20px; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+  `;

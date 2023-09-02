@@ -3,6 +3,7 @@ import  Section  from "./Section/Section";
 import  Statistic  from "./Statistic/Statistics";
 import  Feedback  from "./Feedback/Feedback";
 import  Notification  from "./Notification/Notification";
+import { AppSection } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -38,7 +39,7 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <AppSection>
         <Section title="Please, leave a review about Expresso Cafe">
           <Feedback onLeaveFeedback={this.handleFeedback} />
         </Section>
@@ -56,7 +57,7 @@ export class App extends Component {
             <Notification message="There are no reviews" />
           )}
         </Section>
-      </div>
+      </AppSection>
     );
   }
 }
