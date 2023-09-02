@@ -6,9 +6,9 @@ export default function Feedback({ onLeaveFeedback }) {
   return (
     <div>
      
-      <button onClick={() => onLeaveFeedback('good')}>Добре</button>
-      <button onClick={() => onLeaveFeedback('neutral')}>Нейтрально</button>
-      <button onClick={() => onLeaveFeedback('bad')}>Погано</button>
+      <button onClick={() => onLeaveFeedback('good')}>Good</button>
+      <button onClick={() => onLeaveFeedback('neutral')}>Neutral</button>
+      <button onClick={() => onLeaveFeedback('bad')}>Bad</button>
     </div>
   );
 }

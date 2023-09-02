@@ -39,11 +39,11 @@ export class App extends Component {
 
     return (
       <div>
-        <Section title="Відгуки">
+        <Section title="Please, leave a review about Expresso Cafe">
           <Feedback onLeaveFeedback={this.handleFeedback} />
         </Section>
 
-         <Section title="Статистика">
+         <Section title="Statistics">
           {total > 0 ? (
             <Statistic
               good={good}
@@ -53,7 +53,7 @@ export class App extends Component {
               positivePercentage={positivePercentage}
             />
           ) : (
-            <Notification message="Немає жодного відгуку" />
+            <Notification message="There are no reviews" />
           )}
         </Section>
       </div>

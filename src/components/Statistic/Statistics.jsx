@@ -18,11 +18,11 @@ export default function Statistic({ good, neutral, bad, total, positivePercentag
 
           <div>
     
-    <p>Добре: {good}</p>
-    <p>Нейтрально: {neutral}</p>
-    <p>Погано: {bad}</p>
-    <p>Загальна кількість відгуків: {total}</p>
-    <p>Відсоток позитивних відгуків: {positivePercentage}%</p>
+    <p>Good: {good}</p>
+    <p>Neutral: {neutral}</p>
+    <p>Bad: {bad}</p>
+    <p>Total number of reviews: {total}</p>
+    <p>Percentage of positive feedback: {positivePercentage}%</p>
   </div>
     );
 };
