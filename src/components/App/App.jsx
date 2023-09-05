@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import  Section  from "components/Section";
-import  Statistic  from "components/Statistic";
-import  Feedback  from "components/Feedback";
-import  Notification  from "components/Notification";
+import Section from "components/Section";
+import Statistic from "components/Statistic";
+import Feedback from "components/Feedback";
+import Notification from "components/Notification";
 import { AppSection } from './App.styled';
 
 export default class App extends Component {
@@ -12,11 +12,14 @@ export default class App extends Component {
     bad: 0
   };
 
+  options = ['good', 'neutral', 'bad']; 
+
   handleFeedback = (t) => {
-    this.setState((prevState) => ({
-      [t]: prevState[t] + 1,
+    if (this.options.includes(t)) { 
+      this.setState((prevState) => ({
+        [t]: prevState[t] + 1,
+      }));
     }
-    ));
   };
 
   countTotalFeedback = () => {
@@ -24,7 +27,7 @@ export default class App extends Component {
     return good + neutral + bad;
   };
 
-    countPositiveFeedbackPercentage = () => {
+  countPositiveFeedbackPercentage = () => {
     const total = this.countTotalFeedback();
     const { good } = this.state;
     return total > 0 ? Math.round((good / total) * 100) : 0;
@@ -38,10 +41,10 @@ export default class App extends Component {
     return (
       <AppSection>
         <Section title="Please, leave a review about Expresso Cafe">
-          <Feedback onLeaveFeedback={this.handleFeedback} />
+          <Feedback onLeaveFeedback={this.handleFeedback} options={this.options} />
         </Section>
 
-         <Section title="Statistics">
+        <Section title="Statistics">
           {total > 0 ? (
             <Statistic
               good={good}
